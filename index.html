@@ -50,7 +50,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
           <input class="w3-input w3-border" type="number" value="0" name="Kids" min="0" max="6">
           </div>
         </div>
-        <button class="w3-button w3-dark-grey" type="submit"><i class="fa fa-search w3-margin-right"></i> Consultar disponibilidad</button>
+        <button class="w3-button w3-dark-grey" type="button" onclick="checkDisponibilidad()">
+          <i class="fa fa-search w3-margin-right"></i> Consultar disponibilidad
+        </button>
       </form>
     </div>
   </div>
@@ -276,6 +278,30 @@ Cada detalle de nuestro servicio refleja la pasión por la hospitalidad canaria 
   to { transform: translateY(0); opacity: 1; }
 }
 </style>
+
+<script>
+function checkDisponibilidad() {
+  let checkIn = document.querySelector('input[name="CheckIn"]').value;
+  let checkOut = document.querySelector('input[name="CheckOut"]').value;
+  let adultos = document.querySelector('input[name="Adults"]').value;
+
+  // Validar que haya datos
+  if (!checkIn || !checkOut || !adultos) {
+    alert("⚠ Por favor, completa todos los campos antes de consultar disponibilidad.");
+    return;
+  }
+
+  // Aleatorio: disponibilidad
+  let disponible = Math.random() < 0.7; // 70% probabilidad
+  
+  if (disponible) {
+    alert("✅ ¡Hay disponibilidad!");
+  } else {
+    alert("❌ Lo sentimos, no hay disponibilidad.");
+  }
+}
+</script>
+
 
 
 <!-- Add Google Maps -->
