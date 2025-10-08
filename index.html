@@ -33,11 +33,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
         <div class="w3-row-padding" style="margin:0 -16px;">
           <div class="w3-half w3-margin-bottom">
             <label><i class="fa fa-calendar-o"></i> Check In</label>
-            <input class="w3-input w3-border" type="text" placeholder="DD/MM/YYYY" name="CheckIn" required>
+            <input class="w3-input w3-border" type="date" name="CheckIn" id="checkIn" required>
           </div>
           <div class="w3-half">
             <label><i class="fa fa-calendar-o"></i> Check Out</label>
-            <input class="w3-input w3-border" type="text" placeholder="DD/MM/YYYY" name="CheckOut" required>
+            <input class="w3-input w3-border" type="date" name="CheckOut" id="checkOut" required>
           </div>
         </div>
         <div class="w3-row-padding" style="margin:8px -16px;">
@@ -69,11 +69,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
   <div class="w3-row-padding">
     <div class="w3-col m3">
       <label><i class="fa fa-calendar-o"></i> Check In</label>
-      <input class="w3-input w3-border" type="text" placeholder="DD/MM/YYYY">
+      <input class="w3-input w3-border" type="date" name="CheckInReserva" id="checkInReserva" required>
     </div>
     <div class="w3-col m3">
       <label><i class="fa fa-calendar-o"></i> Check Out</label>
-      <input class="w3-input w3-border" type="text" placeholder="DD/MM/YYYY">
+      <input class="w3-input w3-border" type="date" name="CheckOutReserva" id="checkOutReserva" required>
     </div>
     <div class="w3-col m2">
       <label><i class="fa fa-male"></i> Adultos</label>
@@ -299,6 +299,30 @@ function checkDisponibilidad() {
   } else {
     alert("❌ Lo sentimos, no hay disponibilidad.");
   }
+}
+</script>
+
+<script>
+window.onload = function() {
+  // Calendario para primer formulario
+  setupDateValidation("checkIn", "checkOut");
+
+  // Calendario para reserva
+  setupDateValidation("checkInReserva", "checkOutReserva");
+};
+
+function setupDateValidation(checkInId, checkOutId) {
+  let today = new Date().toISOString().split('T')[0];
+  document.getElementById(checkInId).setAttribute("min", today);
+  document.getElementById(checkOutId).setAttribute("min", today);
+
+  document.getElementById(checkInId).addEventListener("change", function() {
+    let checkInDate = this.value;
+    let nextDay = new Date(checkInDate);
+    nextDay.setDate(nextDay.getDate() + 1);
+    let nextDayStr = nextDay.toISOString().split('T')[0];
+    document.getElementById(checkOutId).setAttribute("min", nextDayStr);
+  });
 }
 </script>
 
