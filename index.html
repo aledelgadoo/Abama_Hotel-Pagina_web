@@ -8,24 +8,41 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+/* Define el Tostado de Siena para el color principal */
+.w3-sienna {
+  background-color: #A0522D !important; /* Tono terroso con subtono rojo */
+  color: #FFFFFF !important; /* Texto blanco para el contraste de lujo */
+}
+
+/* Define el color del texto de acento (para íconos o enlaces) */
+.w3-text-sienna {
+  color: #A0522D !important;
+}
+
+/* Opcional: Para darle calidez a los fondos claros */
+.w3-beige-warm {
+  background-color: #F5F5DC !important;
+}
+
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 </style>
+
 </head>
 <body class="w3-light-grey">
 
 <!-- Navigation Bar -->
 <div class="w3-bar w3-white w3-large">
-  <a href="#" class="w3-bar-item w3-button w3-red w3-mobile"><i class="fa fa-bed w3-margin-right"></i>FMCC</a>
+  <a href="#" class="w3-bar-item w3-button w3-text-brown w3-mobile"><i class="fa fa-bed w3-margin-right"></i>FMCC</a>
   <a href="#rooms" class="w3-bar-item w3-button w3-mobile">Habitaciones</a>
   <a href="#about" class="w3-bar-item w3-button w3-mobile">Sobre nosotros</a>
   <a href="#contact" class="w3-bar-item w3-button w3-mobile">Contacto</a>
-  <a href="#contact" class="w3-bar-item w3-button w3-right w3-light-grey w3-mobile">Reserva ya!</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-right w3-brown w3-mobile">Reserva ya!</a>
 </div>
 <!-- Header -->
 <header class="w3-display-container w3-content" style="max-width:1500px;">
   <img class="w3-image" src="/images/header.jpg" alt="The Hotel" style="min-width:1000px" width="1500" height="800">
   <div class="w3-display-left w3-padding w3-col l6 m8">
-    <div class="w3-container w3-red">
+    <div class="w3-container w3-brown">
       <h2><i class="fa fa-bed w3-margin-right"></i>Abama Tenerife S.</h2>
     </div>
     <div class="w3-container w3-white w3-padding-16">
@@ -157,13 +174,13 @@ Cada detalle de nuestro servicio refleja la pasión por la hospitalidad canaria 
   </div>
   
   <div class="w3-row-padding w3-large w3-center" style="margin:32px 0">
-    <div class="w3-third"><i class="fa fa-map-marker w3-text-red"></i> Adeje, Santa Cruz de Tenerife, España</div>
-    <div class="w3-third"><i class="fa fa-phone w3-text-red"></i> Teléfono: +00 151515</div>
-    <div class="w3-third"><i class="fa fa-envelope w3-text-red"></i> Email: mail@mail.com</div>
+    <div class="w3-third"><i class="fa fa-map-marker w3-text-brown"></i> Adeje, Santa Cruz de Tenerife, España</div>
+    <div class="w3-third"><i class="fa fa-phone w3-text-brown"></i> Teléfono: +00 151515</div>
+    <div class="w3-third"><i class="fa fa-envelope w3-text-brown"></i> Email: mail@mail.com</div>
   </div>
 
-  <div class="w3-panel w3-red w3-leftbar w3-padding-32">
-    <h6><i class="fa fa-info w3-deep-orange w3-padding w3-margin-right"></i> Bajo petición, podemos ofrecer PlayStation, intercomunicador para bebés, servicio de cuidado infantil, equipamiento para mascotas, entre otros.</h6>
+  <div class="w3-panel w3-brown w3-leftbar w3-padding-32">
+    <h6><i class="fa fa-info w3-black w3-padding w3-margin-right"></i> Bajo petición, podemos ofrecer PlayStation, intercomunicador para bebés, servicio de cuidado infantil, equipamiento para mascotas, entre otros.</h6>
   </div>
 
 
@@ -208,20 +225,20 @@ Cada detalle de nuestro servicio refleja la pasión por la hospitalidad canaria 
   </div>
   -->
 
-  <div class="w3-container w3-padding-32 w3-black w3-opacity w3-card w3-hover-opacity-off" style="margin:32px 0;">
+  <div class="w3-container w3-padding-32 w3-brown w3-card w3-hover-opacity-off" style="margin:32px 0;">
     <h2>Entérate de las mejores noticias el primero!</h2>
     <p>Únete a nuestro newsletter</p>
     <label>E-mail</label>
     <input class="w3-input w3-border" type="text" placeholder="Tu correo electrónico">
-    <button type="button" class="w3-button w3-red w3-margin-top">Subscribirme</button>
+    <button type="button" class="w3-button w3-black w3-margin-top">Subscribirme</button>
   </div>
 
   <div class="w3-container" id="contact">
     <h2>Contacto</h2>
     <p>Si tienes cualquier duda, ¡estaremos encantados de atenderte!</p>
-    <i class="fa fa-map-marker w3-text-red" style="width:30px"></i> ULPGC, Gran Canaria<br>
-    <i class="fa fa-phone w3-text-red" style="width:30px"></i> Teléfono: +00 151515<br>
-    <i class="fa fa-envelope w3-text-red" style="width:30px"> </i> Email: mail@mail.com<br>
+    <i class="fa fa-map-marker w3-text-brown" style="width:30px"></i> ULPGC, Gran Canaria<br>
+    <i class="fa fa-phone w3-text-brown" style="width:30px"></i> Teléfono: +00 151515<br>
+    <i class="fa fa-envelope w3-text-brown" style="width:30px"> </i> Email: mail@mail.com<br>
     <form action="/action_page.php" target="_blank">
       <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Nombre" required name="Name"></p>
       <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required name="Email"></p>
@@ -251,8 +268,8 @@ Cada detalle de nuestro servicio refleja la pasión por la hospitalidad canaria 
   bottom: 0;
   left: 0;
   width: 100%;
-  background: rgba(0,0,0,0.9);
-  color: white;
+  background: rgba(245,245,220,1);
+  color: rgba(121, 85, 72, 1);
   padding: 20px;
   display: flex;
   justify-content: space-between;
@@ -266,7 +283,7 @@ Cada detalle de nuestro servicio refleja la pasión por la hospitalidad canaria 
   <span style="max-width: 70%;">Este sitio usa cookies para mejorar la experiencia. Al continuar navegando, aceptas nuestro uso de cookies.</span>
   <div>
     <button onclick="document.getElementById('cookieBanner').style.display='none'" style="
-      background: #4CAF50;
+      background: #795548;
       color: white;
       border: none;
       padding: 10px 18px;
@@ -277,7 +294,7 @@ Cada detalle de nuestro servicio refleja la pasión por la hospitalidad canaria 
       transition: background 0.3s ease;
     " onmouseover="this.style.background='#45a049'" onmouseout="this.style.background='#4CAF50'">Aceptar</button>
     <button onclick="document.getElementById('cookieBanner').style.display='none'" style="
-      background: #f44336;
+      background: #000000;
       color: white;
       border: none;
       padding: 10px 18px;
