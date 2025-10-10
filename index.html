@@ -388,14 +388,14 @@ function confirmarReserva() {
 
   // Validar campos obligatorios
   if (!checkIn || !checkOut || !adultos || !email || !habitacion) {
-    showAlert("⚠ Por favor, completa todos los campos antes de reservar.", "warning");
+    showAlert("⚠️ Por favor, completa todos los campos antes de reservar.", "warning");
     return;
   }
 
   // Validación de email
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
-    showAlert("⚠ Por favor, introduce un correo electrónico válido.", "warning");
+    showAlert("⚠️ Por favor, introduce un correo electrónico válido.", "warning");
     return;
   }
 
@@ -446,7 +446,7 @@ function checkDisponibilidad() {
   let adultos = document.querySelector('input[name="Adults"]').value;
 
   if (!checkIn || !checkOut || !adultos) {
-    showAlert("⚠ Por favor, complete todos los campos antes de consultar disponibilidad.", "warning");
+    showAlert("⚠️ Por favor, complete todos los campos antes de consultar disponibilidad.", "warning");
     return;
   }
 
@@ -487,14 +487,14 @@ function suscribirNewsletter() {
   const email = emailInput.value.trim();
 
   if (!email) {
-    showAlert("⚠ Por favor, introduce tu correo electrónico para suscribirte.", "warning");
+    showAlert("⚠️ Por favor, introduce tu correo electrónico para suscribirte.", "warning");
     return;
   }
 
   // Validación simple de email
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
-    showAlert("⚠ Por favor, introduce un correo electrónico válido.", "warning");
+    showAlert("⚠️ Por favor, introduce un correo electrónico válido.", "warning");
     return;
   }
 
@@ -511,14 +511,14 @@ function enviarConsulta() {
   const mensaje = document.querySelector('input[name="Message"]').value.trim();
 
   if (!nombre || !email || !mensaje) {
-    showAlert("⚠ Por favor, completa todos los campos antes de enviar la consulta.", "warning");
+    showAlert("⚠️ Por favor, completa todos los campos antes de enviar la consulta.", "warning");
     return;
   }
 
   // Validación de email
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
-    showAlert("⚠ Por favor, introduce un correo electrónico válido.", "warning");
+    showAlert("⚠️ Por favor, introduce un correo electrónico válido.", "warning");
     return;
   }
 
