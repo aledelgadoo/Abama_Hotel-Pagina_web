@@ -25,8 +25,110 @@
 }
 
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
-</style>
 
+/* Estilo para las alertas */
+/* Estilo para las alertas */
+.alert {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  min-width: 300px;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 12px;
+  font-family: 'Raleway', Arial, sans-serif;
+  font-size: 15px;
+  color: #fff;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.4s ease;
+  z-index: 9999;
+  white-space: pre-line; /* Esto permite saltos de línea */
+}
+
+.alert.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.alert.success {
+  background: linear-gradient(135deg, #795548, #D2691E); /* Tostado de Siena + Chocolate */
+}
+
+.alert.error {
+  background: linear-gradient(135deg, #8B0000, #795548); /* Rojo oscuro + Tostado de Siena */
+}
+
+.alert.warning {
+  background: linear-gradient(135deg, #D2B48C, #795548); /* Marrón claro cálido */
+  color: #333;
+}
+/* Fondo con transparencia elegante para el formulario de reserva */
+.formulario-reserva {
+  background: rgba(255, 255, 255, 0.15) !important; /* Blanco muy transparente */
+  backdrop-filter: blur(15px); /* Efecto de desenfoque más pronunciado */
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Borde sutil */
+}
+
+/* Header del formulario - más sutil */
+.formulario-reserva .w3-container.w3-brown {
+  background: rgba(121, 85, 72, 1) !important; /* Marrón con 70% de transparencia */
+  border-radius: 12px 12px 0 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Cuerpo del formulario - muy transparente */
+.formulario-reserva .w3-container.w3-white {
+  background: rgba(255, 255, 255, 0) !important; /* Casi transparente */
+  border-radius: 0 0 12px 12px;
+}
+
+/* Inputs con fondo muy sutil */
+.formulario-reserva input,
+.formulario-reserva select {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border: 1px solid rgba(160, 82, 45, 0.2) !important;
+  border-radius: 6px;
+  color: #333 !important;
+}
+
+.formulario-reserva input:focus,
+.formulario-reserva select:focus {
+  border-color: rgba(160, 82, 45, 0.6) !important;
+  box-shadow: 0 0 0 2px rgba(160, 82, 45, 0.1) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Labels con mejor contraste */
+.formulario-reserva label {
+  color: #333 !important;
+  font-weight: 500;
+}
+
+/* Botón más elegante */
+.formulario-reserva .w3-button.w3-dark-grey {
+  background: rgba(93, 64, 55, 1) !important;
+  color: white !important;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.formulario-reserva .w3-button.w3-dark-grey:hover {
+  background: rgba(78, 52, 46, 0.95) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Animación para el banner de cookies */
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+</style>
 </head>
 <body class="w3-light-grey">
 
@@ -38,10 +140,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
   <a href="#contact" class="w3-bar-item w3-button w3-mobile">Contacto</a>
   <a href="#contact" class="w3-bar-item w3-button w3-right w3-brown w3-mobile">Reserva ya!</a>
 </div>
+
 <!-- Header -->
 <header class="w3-display-container w3-content" style="max-width:1500px;">
   <img class="w3-image" src="/images/header.jpg" alt="The Hotel" style="min-width:1000px" width="1500" height="800">
-  <div class="w3-display-left w3-padding w3-col l6 m8">
+  <div class="w3-display-left w3-padding w3-col l6 m8 formulario-reserva">
     <div class="w3-container w3-brown">
       <h2><i class="fa fa-bed w3-margin-right"></i>Abama Tenerife S.</h2>
     </div>
@@ -82,7 +185,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
     <h3>Habitaciones</h3>
     <p>Nuestras habitaciones han sido diseñadas para ofrecer la máxima comodidad y elegancia, combinando un estilo contemporáneo con detalles inspirados en la esencia del Atlántico. Amplios espacios bañados por la luz natural, terrazas privadas con vistas al mar o a los jardines tropicales, y un equipamiento de última generación convierten su estancia en una experiencia única.</p>
   </div>
-  
+
   <div class="w3-row-padding w3-margin-top">
   <div class="w3-col l2 m4 s12">
     <label><i class="fa fa-calendar-o"></i> Check In</label>
@@ -116,7 +219,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 </div>
 
   <div style="text-align:center; margin-top:40px;">
-  <button class="w3-button w3-red w3-round-large" style="padding:14px 30px; font-size:16px; box-shadow:0 4px 8px rgba(0,0,0,0.2);" onclick="confirmarReserva()">Reservar ahora</button>
+  <button class="w3-button w3-black w3-round-large" style="padding:14px 30px; font-size:16px; box-shadow:0 4px 8px rgba(0,0,0,0.2);" onclick="confirmarReserva()">Reservar ahora</button>
 </div>
 
 </div>
@@ -172,7 +275,7 @@ Cada detalle de nuestro servicio refleja la pasión por la hospitalidad canaria 
       <img src="images/foto general.jpg" class="w3-image w3" style="width:100%; height:500px; object-fit:cover">
     </div>
   </div>
-  
+
   <div class="w3-row-padding w3-large w3-center" style="margin:32px 0">
     <div class="w3-third"><i class="fa fa-map-marker w3-text-brown"></i> Adeje, Santa Cruz de Tenerife, España</div>
     <div class="w3-third"><i class="fa fa-phone w3-text-brown"></i> Teléfono: +00 151515</div>
@@ -183,54 +286,12 @@ Cada detalle de nuestro servicio refleja la pasión por la hospitalidad canaria 
     <h6><i class="fa fa-info w3-black w3-padding w3-margin-right"></i> Bajo petición, podemos ofrecer PlayStation, intercomunicador para bebés, servicio de cuidado infantil, equipamiento para mascotas, entre otros.</h6>
   </div>
 
-
-  <!-- Para poner más hoteles de nuestra línea
-  <div class="w3-row-padding w3-padding-16 w3-text-white w3-large">
-    <div class="w3-half w3-margin-bottom">
-      <div class="w3-display-container">
-        <img src="/w3images/cinqueterre.jpg" alt="Cinque Terre" style="width:100%">
-        <span class="w3-display-bottomleft w3-padding">Cinque Terre</span>
-      </div>
-    </div>
-    <div class="w3-half">
-      <div class="w3-row-padding" style="margin:0 -16px">
-        <div class="w3-half w3-margin-bottom">
-          <div class="w3-display-container">
-            <img src="/w3images/newyork2.jpg" alt="New York" style="width:100%">
-            <span class="w3-display-bottomleft w3-padding">New York</span>
-          </div>
-        </div>
-        <div class="w3-half w3-margin-bottom">
-          <div class="w3-display-container">
-            <img src="/w3images/sanfran.jpg" alt="San Francisco" style="width:100%">
-            <span class="w3-display-bottomleft w3-padding">San Francisco</span>
-          </div>
-        </div>
-      </div>
-      <div class="w3-row-padding" style="margin:0 -16px">
-        <div class="w3-half w3-margin-bottom">
-          <div class="w3-display-container">
-            <img src="/w3images/pisa.jpg" alt="Pisa" style="width:100%">
-            <span class="w3-display-bottomleft w3-padding">Pisa</span>
-          </div>
-        </div>
-        <div class="w3-half w3-margin-bottom">
-          <div class="w3-display-container">
-            <img src="/w3images/paris.jpg" alt="Paris" style="width:100%">
-            <span class="w3-display-bottomleft w3-padding">Paris</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  -->
-
   <div class="w3-container w3-padding-32 w3-brown w3-card w3-hover-opacity-off" style="margin:32px 0;">
     <h2>Entérate de las mejores noticias el primero!</h2>
     <p>Únete a nuestro newsletter</p>
     <label>E-mail</label>
     <input class="w3-input w3-border" type="text" placeholder="Tu correo electrónico">
-    <button type="button" class="w3-button w3-black w3-margin-top">Subscribirme</button>
+    <button type="button" class="w3-button w3-black w3-margin-top" onclick="suscribirNewsletter()">Subscribirme</button>
   </div>
 
   <div class="w3-container" id="contact">
@@ -243,7 +304,7 @@ Cada detalle de nuestro servicio refleja la pasión por la hospitalidad canaria 
       <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Nombre" required name="Name"></p>
       <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required name="Email"></p>
       <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Mensaje" required name="Message"></p>
-      <p><button class="w3-button w3-black w3-padding-large" type="submit">ENVIAR MENSAJE</button></p>
+      <p><button class="w3-button w3-black w3-padding-large" type="button" onclick="enviarConsulta()">ENVIAR MENSAJE</button></p>
     </form>
   </div>
 
@@ -262,6 +323,7 @@ Cada detalle de nuestro servicio refleja la pasión por la hospitalidad canaria 
     <i class="fa fa-linkedin w3-hover-opacity"></i>
   </div>
 </footer>
+
 <!-- Aviso de Cookies -->
 <div id="cookieBanner" style="
   position: fixed;
@@ -307,14 +369,11 @@ Cada detalle de nuestro servicio refleja la pasión por la hospitalidad canaria 
   </div>
 </div>
 
-<style>
-@keyframes slideUp {
-  from { transform: translateY(100%); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-</style>
+<!-- Contenedor del mensaje de alerta -->
+<div id="alertBox" class="alert"></div>
 
 <script>
+// Funciones para la página
 function seleccionarHabitacion(habitacion) {
   document.getElementById("habitacionSeleccionada").value = habitacion;
 }
@@ -323,50 +382,84 @@ function confirmarReserva() {
   let checkIn = document.getElementById("checkInReserva").value;
   let checkOut = document.getElementById("checkOutReserva").value;
   let adultos = document.getElementById("adultos").value;
-  let ninos = document.getElementById("ninos").value;
-  let email = document.getElementById("email").value;
+  let ninos = document.getElementById("ninos").value || "0"; // Si está vacío, pone "0"
+  let email = document.getElementById("email").value.trim();
   let habitacion = document.getElementById("habitacionSeleccionada").value;
 
+  // Validar campos obligatorios
   if (!checkIn || !checkOut || !adultos || !email || !habitacion) {
-    alert("⚠ Por favor, completa todos los campos antes de reservar.");
+    showAlert("⚠ Por favor, completa todos los campos antes de reservar.", "warning");
     return;
   }
 
-  alert(`✅ Reserva confirmada:\n
-  Habitación: ${habitacion}\n
-  Check In: ${checkIn}\n
-  Check Out: ${checkOut}\n
-  Adultos: ${adultos}\n
-  Niños: ${ninos}\n
-  Email: ${email}`);
+  // Validación de email
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    showAlert("⚠ Por favor, introduce un correo electrónico válido.", "warning");
+    return;
+  }
+
+  // Mensaje con formato multilínea usando \n (SIN el tic al inicio)
+  let mensaje = `Reserva confirmada:\n\n` +
+                `🏨 Habitación: ${habitacion}\n` +
+                `📅 Check In: ${checkIn}\n` +
+                `📅 Check Out: ${checkOut}\n` +
+                `👤 Adultos: ${adultos}\n` +
+                `👶 Niños: ${ninos}\n` +
+                `📧 Email: ${email}\n\n` +
+                `¡Gracias por tu reserva!`;
+
+  showAlert(mensaje, "success");
 }
-</script>
 
+function showAlert(message, type) {
+  const alertBox = document.getElementById("alertBox");
 
-<script>
+  // Limpiar contenido anterior
+  alertBox.innerHTML = '';
+
+  // Si es un mensaje de éxito, añadir el tic sin color
+  if (type === "success") {
+    const checkMark = document.createElement('span');
+    checkMark.innerHTML = '✅';
+    checkMark.style.marginRight = '10px';
+    alertBox.appendChild(checkMark);
+  }
+
+  // Añadir el texto del mensaje (sin el tic que ya viene en el mensaje)
+  const textNode = document.createTextNode(message.replace('✅', '').trim());
+  alertBox.appendChild(textNode);
+
+  alertBox.className = `alert ${type} show`;
+
+  let duration = 5000;
+  if(type === "warning") duration = 4000;
+
+  setTimeout(() => {
+    alertBox.classList.remove("show");
+  }, duration);
+}
+
 function checkDisponibilidad() {
   let checkIn = document.querySelector('input[name="CheckIn"]').value;
   let checkOut = document.querySelector('input[name="CheckOut"]').value;
   let adultos = document.querySelector('input[name="Adults"]').value;
 
-  // Validar que haya datos
   if (!checkIn || !checkOut || !adultos) {
-    alert("⚠ Por favor, completa todos los campos antes de consultar disponibilidad.");
+    showAlert("⚠ Por favor, complete todos los campos antes de consultar disponibilidad.", "warning");
     return;
   }
 
-  // Aleatorio: disponibilidad
-  let disponible = Math.random() < 0.7; // 70% probabilidad
-  
+  let disponible = Math.random() < 0.7; // simulación
+
   if (disponible) {
-    alert("✅ ¡Hay disponibilidad!");
+    showAlert("✅ ¡Tenemos habitaciones disponibles para tus fechas!", "success");
   } else {
-    alert("❌ Lo sentimos, no hay disponibilidad.");
+    showAlert("❌ Lo sentimos, no hay disponibilidad en esas fechas.", "error");
   }
 }
-</script>
 
-<script>
+// Configuración de validación de fechas
 window.onload = function() {
   // Calendario para primer formulario
   setupDateValidation("checkIn", "checkOut");
@@ -388,9 +481,56 @@ function setupDateValidation(checkInId, checkOutId) {
     document.getElementById(checkOutId).setAttribute("min", nextDayStr);
   });
 }
+
+function suscribirNewsletter() {
+  const emailInput = document.querySelector('.w3-container.w3-brown.w3-card input[type="text"]');
+  const email = emailInput.value.trim();
+
+  if (!email) {
+    showAlert("⚠ Por favor, introduce tu correo electrónico para suscribirte.", "warning");
+    return;
+  }
+
+  // Validación simple de email
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    showAlert("⚠ Por favor, introduce un correo electrónico válido.", "warning");
+    return;
+  }
+
+  // Simular suscripción exitosa
+  showAlert(`✅ ¡Te has suscrito correctamente!\n\n📧 ${email}\n\nGracias por unirte a nuestro newsletter.`, "success");
+
+  // Limpiar el campo de email
+  emailInput.value = '';
+}
+
+function enviarConsulta() {
+  const nombre = document.querySelector('input[name="Name"]').value.trim();
+  const email = document.querySelector('input[name="Email"]').value.trim();
+  const mensaje = document.querySelector('input[name="Message"]').value.trim();
+
+  if (!nombre || !email || !mensaje) {
+    showAlert("⚠ Por favor, completa todos los campos antes de enviar la consulta.", "warning");
+    return;
+  }
+
+  // Validación de email
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    showAlert("⚠ Por favor, introduce un correo electrónico válido.", "warning");
+    return;
+  }
+
+  // Simular envío exitoso
+  showAlert(`✅ ¡Consulta enviada correctamente!\n\n👤 Nombre: ${nombre}\n📧 Email: ${email}\n💬 Mensaje: ${mensaje}\n\nTe contactaremos pronto.`, "success");
+
+  // Limpiar los campos del formulario
+  document.querySelector('input[name="Name"]').value = '';
+  document.querySelector('input[name="Email"]').value = '';
+  document.querySelector('input[name="Message"]').value = '';
+}
 </script>
-
-
 
 <!-- Add Google Maps -->
 <script>
